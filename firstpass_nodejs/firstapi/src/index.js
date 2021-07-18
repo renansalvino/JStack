@@ -9,6 +9,4 @@ console.log(`Request method: ${request.method} | Endopoint: ${request.url}`);
   response.end('<h1>Ola mundo!<h1>');
 });
 
-server.listen(3000, () => console.log('🔥 Server started at http://localhost:3000')); 
-
-func
+server.listen(3000, () => console.log('🔥 Server started at http://localhost:3000'))
