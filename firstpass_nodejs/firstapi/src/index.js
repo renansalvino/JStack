@@ -10,8 +10,8 @@ const server = http.createServer((request, response) => {
     response.writeHead(200, { 'Content-Type': 'application/json' });
     //Dentro do END sempre tenho que mandar uma string
     response.end(JSON.stringify(users));
-  }else {
-    response.writeHead(404, {'Content-Type': 'text/html'});
+  } else {
+    response.writeHead(404, { 'Content-Type': 'text/html' });
     response.end(`Cannot ${request.method} ${request.url}`);
   }
   
