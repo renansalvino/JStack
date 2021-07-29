@@ -1,6 +1,6 @@
 # Curso JStack
 
-![Curso%20JStack%20a1abbfa9b41849d58edd5626ec98056f/Untitled.png](Curso%20JStack%20a1abbfa9b41849d58edd5626ec98056f/Untitled.png)
+![Curso%20JStack%2055ad6a3dd0e54f44ae4b3ed73e9e0c0b/Logo_JStack.png](Curso%20JStack%2055ad6a3dd0e54f44ae4b3ed73e9e0c0b/Logo_JStack.png)
 
 📦 Repositório onde deixo os códigos das aulas do curso JStack.
 
