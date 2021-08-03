@@ -1,5 +1,4 @@
 const users = require('../mocks/users');
-const products = require('../mocks/products');
 //CRUD de usuários
 module.exports = {
   listUsers(request, response) {
@@ -15,13 +14,20 @@ module.exports = {
 
     response.writeHead(200, { 'Content-Type': 'application/json' });
     //Dentro do END sempre tenho que mandar uma string
-    response.end(JSON.stringify(users));
+    response.end(JSON.stringify(sortedUsers));
   },
 
-  getUserById(request, response) { 
-    const {id} = request.params;
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    response.end(JSON.stringify({id}));
+  getUserById(request, response) {
+    const { id } = request.params;
 
-}
+    const user = users.find((user) => user.id === Number(id))
+
+    if (!user) {
+      response.writeHead(400, { 'Content-Type': 'application/json' });
+      response.end(JSON.stringify({ error : 'User not found' }));
+    } else {
+      response.writeHead(200, { 'Content-Type': 'application/json' });
+      response.end(JSON.stringify(user));
+    }
+  }
 }

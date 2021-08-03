@@ -6,11 +6,11 @@ module.exports = [
   },
   {
     id:2,
-    name: 'Rodrigo',
+    name: 'Julius',
   },
   {
     id:3,
-    name: 'Rute',
+    name: 'Besourinho',
   }
 
 

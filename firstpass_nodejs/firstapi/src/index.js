@@ -8,27 +8,25 @@ const server = http.createServer((request, response) => {
   const parsedUrl = new URL(`http://localhost:3000${request.url}`);
   console.log(`Request method: ${request.method} | Endopoint: ${parsedUrl.pathname}`);
 
-  //Transforma em Objetos JavaScript
-  // console.log(Object.fromEntries(parsedUrl.searchParams));
-
   let { pathname } = parsedUrl;
+  let id = null;
 
   const splitEndpoint = pathname.split('/').filter(Boolean);
 
-  if (splitEndpoint.lenght > 1) {
+  if (splitEndpoint.length > 1) {
 
-    parsedUrl.pathname = `/${splitEndpoint[0]}/:id`;
+    pathname = `/${splitEndpoint[0]}/:id`;
     id = splitEndpoint[1];
   }
 
 
   const route = routes.find((routeObj) => (
-    routeObj.endpoint === parsedUrl.pathname && routeObj.method === request.method
+    routeObj.endpoint === pathname && routeObj.method === request.method
   ));
 
   if (route) {
     request.query = Object.fromEntries(parsedUrl.searchParams);
-    request.params = (id);
+    request.params = {id};
     route.handler(request, response);
   } else {
     response.writeHead(404, { 'Content-Type': 'text/html' });

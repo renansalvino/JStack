@@ -12,10 +12,5 @@ module.exports = [
     method: 'GET',
     handler: userController.getUserById,
   },
-  {
-    endpoint: '/produtos',
-    method: 'GET',
-    handler: userController.listProducts,
-  },
 ];
 
