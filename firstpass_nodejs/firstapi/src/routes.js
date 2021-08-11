@@ -1,4 +1,4 @@
-const userController = require ('./controllers/UserController');
+const userController = require('./controllers/UserController');
 
 module.exports = [
   //Cada um dos objetos vai representar uma rota da nossa API
@@ -12,5 +12,10 @@ module.exports = [
     method: 'GET',
     handler: userController.getUserById,
   },
+  {
+    endpoint: '/users',
+    method: 'POST',
+    handler: userController.createUser,
+  }
 ];
 

@@ -1,3 +1,4 @@
+const { createSecureServer } = require('node:http2');
 const users = require('../mocks/users');
 //CRUD de usuários
 module.exports = {
@@ -24,5 +25,8 @@ module.exports = {
       return response.send(400, { error: 'User not found' });
     }
     response.send(200, user);
+  },
+  createUser(request, response) {
+    response.send(200, { ok: true });
   }
 }
