@@ -1,4 +1,3 @@
-const { createSecureServer } = require('node:http2');
 const users = require('../mocks/users');
 //CRUD de usuários
 module.exports = {
